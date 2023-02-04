@@ -18,6 +18,6 @@ from controller import Controller
 
 ## app
 
-controller = Controller(inputdir, outputdir)
+controller = Controller(inputdir, outputdir, 2022)
 
 controller.start()
