@@ -17,14 +17,14 @@ class Controller:
 
     def start(self):
         print("Process started...")
-        outputfile = os.path.join(self.outputdir, f'tasa_bcv_dolar_dia.xls')
+        outputfile = os.path.join(self.outputdir, f'tasa_bcv_dolar_dia.xlsx')
         self.excel_handler.initialize_output_file(outputfile)
         start_date = datetime.datetime(self.year, 1, 1)
         quarterIDs = ["a", "b", "c", "d"]
         for id in quarterIDs:
             next_start_date = start_date + relativedelta(months=3)
             end_date = next_start_date - relativedelta(days=1)
-            output = self.excel_handler.process_file(os.path.join(self.inputdir, f'2_1_2{id}22_smc.xls'), start_date, end_date)
+            output = self.excel_handler.process_file(os.path.join(self.inputdir, f'2_1_2{id}22_smc.xlsx'), start_date, end_date)
             self.excel_handler.append_output_to_file(output, outputfile)
             start_date = next_start_date
         print("Process finished.")
