@@ -17,7 +17,7 @@ class Controller:
 
     def start(self):
         print("Process started...")
-        outputfile = os.path.join(self.outputdir, f'tasa_bcv_dolar_dia.xlsx')
+        outputfile = os.path.join(self.outputdir, f'bcv_daily_usd_rate_{self.year}.xlsx')
         self.excel_handler.initialize_output_file(outputfile)
         start_date = datetime.datetime(self.year, 1, 1)
         quarterIDs = ["a", "b", "c", "d"]
