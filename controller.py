@@ -24,7 +24,7 @@ class Controller:
         for id in quarterIDs:
             next_start_date = start_date + relativedelta(months=3)
             end_date = next_start_date - relativedelta(days=1)
-            output = self.excel_handler.process_file(os.path.join(self.inputdir, f'2_1_2{id}22_smc.xlsx'), start_date, end_date)
+            output = self.excel_handler.process_file(os.path.join(self.inputdir, f'2_1_2{id}{self.year % 100}_smc.xlsx'), start_date, end_date)
             self.excel_handler.append_output_to_file(output, outputfile)
             start_date = next_start_date
         print("Process finished.")
