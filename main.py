@@ -21,7 +21,7 @@ from controller import Controller
 
 def main(argv):
     global inputdir
-    year = 2023
+    year = None
     opts, args = getopt.getopt(argv,"hy:p:",["year=", "path="])
     for opt, arg in opts:
         if opt == '-h':
